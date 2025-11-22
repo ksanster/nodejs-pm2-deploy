@@ -20,7 +20,7 @@ module.exports = {
       'pre-deploy-local': `scp ./.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/backend`,
       'post-deploy': 'cd ./frontend && npm install && npm run build'
         + ' && cd ../backend && npm install && npm run build'
-        + ' && pm2 startOrRestart ecosystem.config.json',
+        + ' && pm2 startOrRestart ecosystem.config.js',
     },
   },
 };
